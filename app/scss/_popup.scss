@@ -1,0 +1,241 @@
+.air-conteiner {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.0);
+	z-index: -100;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 0;
+	top: 0;
+	transition: all ease 0.8s;
+	opacity: 0;
+}
+
+.air-conteiner_active {
+	z-index: 99999;
+	background: rgba(226, 226, 226, 0.56);
+	opacity: 1;
+}
+
+.air-close {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 40px;
+	top: 20px;
+	z-index: 555;
+	cursor: pointer;
+	background: url("https://www.svgrepo.com/show/470376/cross.svg")no-repeat;
+	background-size: cover;
+	background-position: center;
+	transition: all ease 0.3s;
+
+	&:hover {
+			transform: scale(1.1);
+	}
+}
+
+.popup-air {
+	position: absolute;
+	transition: all ease 0.8s;
+	transform: translateY(100vh) scale(0.4) skew(30deg, 20deg);
+	opacity: 0;
+}
+
+.air-popup_active {
+	transform: translateY(0%) scale(1) skew(0deg, 0deg);
+	opacity: 1;
+}
+
+.slider-wrapper-gg {
+	max-width: 1200px;
+}
+// Отдельно взятая форма
+.popup__form-body {
+	padding: 0 20px;
+}
+.popup__form {
+	max-width: 716px;
+	overflow: auto;
+	background: #fff;
+  display: flex;
+  box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.11);
+
+}
+.popup__form-wrapper {
+  padding: 50px;
+}
+.popup__form-title {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 125%;
+  margin-bottom: 50px;
+}
+.callback__form-img {
+  width: 278px;
+  height: auto;
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+.callback__form-item.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  label {
+    width: 100%;
+  }
+}
+.callback__form-item.check {
+  flex-direction: row;
+  align-items: flex-start;
+}
+.callback__form-item-wrapper {
+  width: 48%;
+}
+.callback__form-item {
+	margin: 0 0 25px 0;
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+  &-politics {
+    font-size: 14px;
+    color: rgba(46, 46, 46, 0.41);
+    margin: -3px 0 0 15px;
+  }
+	& input, textarea {
+		font-family: 'Montserrat', sans-serif;
+		width: 100%;
+		background: transparent;
+		border: 1px solid rgba(46, 46, 46, 0.25);
+		resize: none;
+		padding: 20px 18px;
+		color: rgba(46, 46, 46, 0.5);
+		font-size: 16px;
+		transition: all 0.3s ease;
+    max-height: 155px;
+		&:focus {
+			//border: 1px solid #fff;
+			transition: all 0.3s ease;
+		}
+	}
+  & select {
+    font-family: 'Montserrat', sans-serif;
+		width: 100%;
+		background: transparent;
+		border: 1px solid rgba(46, 46, 46, 0.25);
+		resize: none;
+		padding: 20px 18px;
+		font-size: 16px;
+		transition: all 0.3s ease;
+    color: #2E2E2E;
+    & option {
+      color: #2E2E2E;
+    }
+		&:focus {
+			//border: 1px solid #fff;
+			transition: all 0.3s ease;
+		}
+  }
+  & label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 9px;
+  }
+	& input[type='checkbox'] {
+		padding: 0;
+		width: auto;
+    cursor: pointer;
+	}
+	& input[type='submit'] {
+		padding: 14px 0;
+		width: 259px;
+		background: transparent;
+		font-weight: 500;
+		font-size: 18px;
+		cursor: pointer;
+		border: 1px solid #2E2E2E;
+    color: #2E2E2E;
+		transition: all 0.3s ease;
+	}
+}
+.callback__btn-wrapper {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0;
+}
+.video_popup {
+	height: 640px;
+	width: 1200px;
+	iframe {
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+	}
+	.air-close {
+		width: 25px;
+		height: 25px;
+		top: -40px;
+		right: 10px;
+	}
+}
+
+@media only screen and (max-width: 1250px){
+  .popup__form .contacnts__form-item {
+    width: 614px;
+  }
+  .popup__form .contacts__form-wrapper .contacnts__form-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1160px){
+	.video_popup {
+			width: calc(100% - 40px);
+			position: relative;
+			padding-bottom: 53.25%; /* 16:9 */
+			height: 0;
+			iframe {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+			}
+	}
+}
+
+@media only screen and (max-width: 750px){
+  //.popup__form-body {
+  //  max-height: calc(100vh - 120px);
+  //  overflow-y: auto;
+  //}
+  .popup__form {
+    max-width: auto;
+    width: 340px;
+  }
+  .popup__form-wrapper {
+    padding: 30px 20px;
+    width: 100%;
+  }
+  .popup__form .contacnts__form-item {
+    width: 100%;
+  }
+  .popup__form-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  .popup__form .contacts__form-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .popup__form .sub {
+    margin-bottom: 0;
+  }
+}
